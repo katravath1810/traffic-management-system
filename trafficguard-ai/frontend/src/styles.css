@@ -1,0 +1,77 @@
+.root-font{font-synthesis:none}
+:root{
+  --bg: #0B0F14; /* deep asphalt navy */
+  --surface: #141A22; /* lifted charcoal */
+  --accent: #FFB020; /* signal amber */
+  --danger: #E4483D; /* alert red */
+  --success: #3FB27F; /* signal green */
+  --text-head: #EDEFF2;
+  --text-body: #9AA4B2;
+  --muted: rgba(154,164,178,0.12);
+  --hairline: rgba(255,255,255,0.04);
+}
+html,body{height:100%}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,var(--bg),#071027);color:var(--text-body);margin:0}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.button{background:var(--accent);color:#071016;padding:10px 14px;border-radius:4px;border:none;cursor:pointer;font-weight:600}
+.button:hover{box-shadow:0 6px 18px rgba(255,176,32,0.12)}
+.button:focus{outline:2px solid rgba(255,176,32,0.18);outline-offset:2px}
+.btn-ghost{background:transparent;color:var(--text-head);border:1px solid transparent}
+.card{background:var(--surface);padding:18px;border-radius:10px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.02)}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--hairline)}
+.nav a{color:var(--text-body);margin-right:14px;text-decoration:none}
+.nav a:hover{color:var(--text-head)}
+
+/* User button */
+.user .button{background:transparent;color:var(--text-head);border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:4px}
+
+/* Layout */
+.layout{display:flex;gap:18px}
+.sidebar{width:220px;padding:12px}
+.main{flex:1}
+.sidebar a{color:var(--text-body);text-decoration:none}
+
+/* Hero / viewfinder */
+.hero{position:relative;overflow:hidden;padding:28px;border-radius:12px}
+.hero .title{font-family:'Space Grotesk', Inter, sans-serif;color:var(--text-head);font-size:32px;letter-spacing:1px;margin:0}
+.hero .lead{color:var(--text-body);margin-top:8px}
+.viewfinder{border:2px solid rgba(255,255,255,0.04);padding:24px;border-radius:8px;position:relative}
+.viewfinder:before,.viewfinder:after{content:'';position:absolute;border:2px solid rgba(255,176,32,0.04);width:28px;height:28px}
+.viewfinder:before{left:6px;top:6px;border-left-color:var(--accent);border-top-color:var(--accent)}
+.viewfinder:after{right:6px;bottom:6px;border-right-color:var(--accent);border-bottom-color:var(--accent)}
+
+/* scanning line */
+.scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);top:20%;opacity:0.9;transform:translateY(-50%)}
+@media (prefers-reduced-motion: no-preference){
+  .scan-line{animation:scan 3s linear infinite}
+  @keyframes scan{0%{top:0%}50%{top:50%}100%{top:100%}}
+}
+
+/* How it works */
+.steps{display:flex;gap:12px;flex-wrap:wrap}
+.step{display:flex;gap:12px;align-items:flex-start;background:transparent;padding:12px;border-radius:8px}
+.step .icon{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.step h4{margin:0;color:var(--text-head);font-family:'Space Grotesk', Inter, sans-serif;letter-spacing:0.8px}
+.divider{height:1px;background:var(--hairline);margin:18px 0}
+
+/* Buttons and links */
+.cta{background:var(--accent);color:#071016;padding:10px 14px;border-radius:4px;border:none;font-weight:700}
+.cta:hover{filter:brightness(1.02);box-shadow:0 8px 24px rgba(255,176,32,0.12)}
+
+/* Responsive */
+@media (max-width:720px){
+  .layout{flex-direction:column}
+  .sidebar{width:100%}
+  .hero .title{font-size:22px}
+}
+
+.user{display:flex;align-items:center}
+.user-menu{position:absolute;right:0;top:40px;min-width:200px;padding:12px;z-index:40}
+.user-menu a{color:#cfe5ff;margin-right:8px;text-decoration:none}
+
+.home-user{position:absolute;right:0;top:0;padding:8px 12px;border-radius:8px}
+
+.layout{display:flex;gap:18px}
+.sidebar{width:220px;padding:12px}
+.main{flex:1}
+.sidebar a{color:#cfe5ff;text-decoration:none}
